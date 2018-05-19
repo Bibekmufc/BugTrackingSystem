@@ -16,6 +16,7 @@ namespace BugTrackingSystem
         string user;
         string pass;
         string userRole;
+        Admin_Panel a;
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrack; password=; SslMode=none;");
         MySqlDataAdapter ada;
         DataTable dt;
@@ -106,7 +107,7 @@ namespace BugTrackingSystem
                     MessageBox.Show("incorrect username and password", "alter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -116,6 +117,18 @@ namespace BugTrackingSystem
         {
             SubmitReport s = new SubmitReport();
             s.Show();
+        }
+
+        private void btndash_Click(object sender, EventArgs e)
+        {
+            Dashboard d = new Dashboard();
+                d.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Admin_Panel a = new Admin_Panel();
+            a.Show();
         }
     }
 }

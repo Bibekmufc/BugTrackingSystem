@@ -32,10 +32,6 @@ namespace BugTrackingSystem
             {
                 lblemail.Text = " Please enter your email ";
             }
-            else if (cmbrole.Text == "")
-            {
-                lblrole.Text = "Please select a role ";
-            }
             else if (txtuname.Text == "")
             {
                 lblusername.Text = " Please enter a username ";
@@ -62,7 +58,7 @@ namespace BugTrackingSystem
                         this.Close();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

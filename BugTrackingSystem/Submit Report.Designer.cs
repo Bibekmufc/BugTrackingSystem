@@ -40,16 +40,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtpname = new System.Windows.Forms.TextBox();
+            this.txtassgnto = new System.Windows.Forms.TextBox();
+            this.txtclass = new System.Windows.Forms.TextBox();
+            this.txtsummary = new System.Windows.Forms.TextBox();
+            this.txtauthor = new System.Windows.Forms.TextBox();
+            this.txtassgnby = new System.Windows.Forms.TextBox();
+            this.txtmethod = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtline = new System.Windows.Forms.TextBox();
+            this.cmbseverity = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txteditor = new FastColoredTextBoxNS.FastColoredTextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -70,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Console", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Olive;
-            this.label1.Location = new System.Drawing.Point(274, 9);
+            this.label1.Location = new System.Drawing.Point(391, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 30);
             this.label1.TabIndex = 0;
@@ -166,55 +166,55 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Code:";
             // 
-            // textBox1
+            // txtpname
             // 
-            this.textBox1.Location = new System.Drawing.Point(212, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtpname.Location = new System.Drawing.Point(212, 106);
+            this.txtpname.Name = "txtpname";
+            this.txtpname.Size = new System.Drawing.Size(153, 22);
+            this.txtpname.TabIndex = 2;
             // 
-            // textBox2
+            // txtassgnto
             // 
-            this.textBox2.Location = new System.Drawing.Point(212, 216);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 22);
-            this.textBox2.TabIndex = 2;
+            this.txtassgnto.Location = new System.Drawing.Point(212, 216);
+            this.txtassgnto.Name = "txtassgnto";
+            this.txtassgnto.Size = new System.Drawing.Size(153, 22);
+            this.txtassgnto.TabIndex = 2;
             // 
-            // textBox3
+            // txtclass
             // 
-            this.textBox3.Location = new System.Drawing.Point(677, 106);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 22);
-            this.textBox3.TabIndex = 2;
+            this.txtclass.Location = new System.Drawing.Point(677, 106);
+            this.txtclass.Name = "txtclass";
+            this.txtclass.Size = new System.Drawing.Size(125, 22);
+            this.txtclass.TabIndex = 2;
             // 
-            // textBox4
+            // txtsummary
             // 
-            this.textBox4.Location = new System.Drawing.Point(212, 317);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(153, 59);
-            this.textBox4.TabIndex = 2;
+            this.txtsummary.Location = new System.Drawing.Point(212, 317);
+            this.txtsummary.Multiline = true;
+            this.txtsummary.Name = "txtsummary";
+            this.txtsummary.Size = new System.Drawing.Size(153, 59);
+            this.txtsummary.TabIndex = 2;
             // 
-            // textBox5
+            // txtauthor
             // 
-            this.textBox5.Location = new System.Drawing.Point(212, 164);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(153, 22);
-            this.textBox5.TabIndex = 2;
+            this.txtauthor.Location = new System.Drawing.Point(212, 164);
+            this.txtauthor.Name = "txtauthor";
+            this.txtauthor.Size = new System.Drawing.Size(153, 22);
+            this.txtauthor.TabIndex = 2;
             // 
-            // textBox6
+            // txtassgnby
             // 
-            this.textBox6.Location = new System.Drawing.Point(212, 260);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(153, 22);
-            this.textBox6.TabIndex = 2;
+            this.txtassgnby.Location = new System.Drawing.Point(212, 260);
+            this.txtassgnby.Name = "txtassgnby";
+            this.txtassgnby.Size = new System.Drawing.Size(153, 22);
+            this.txtassgnby.TabIndex = 2;
             // 
-            // textBox7
+            // txtmethod
             // 
-            this.textBox7.Location = new System.Drawing.Point(677, 164);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(125, 22);
-            this.textBox7.TabIndex = 2;
+            this.txtmethod.Location = new System.Drawing.Point(677, 164);
+            this.txtmethod.Name = "txtmethod";
+            this.txtmethod.Size = new System.Drawing.Size(125, 22);
+            this.txtmethod.TabIndex = 2;
             // 
             // label11
             // 
@@ -227,24 +227,24 @@
             this.label11.Text = "Line No.";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox8
+            // txtline
             // 
-            this.textBox8.Location = new System.Drawing.Point(677, 212);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 22);
-            this.textBox8.TabIndex = 2;
+            this.txtline.Location = new System.Drawing.Point(677, 212);
+            this.txtline.Name = "txtline";
+            this.txtline.Size = new System.Drawing.Size(125, 22);
+            this.txtline.TabIndex = 2;
             // 
-            // comboBox2
+            // cmbseverity
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbseverity.FormattingEnabled = true;
+            this.cmbseverity.Items.AddRange(new object[] {
             "Minor",
             "Major",
             "Critical"});
-            this.comboBox2.Location = new System.Drawing.Point(677, 260);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 4;
+            this.cmbseverity.Location = new System.Drawing.Point(677, 260);
+            this.cmbseverity.Name = "cmbseverity";
+            this.cmbseverity.Size = new System.Drawing.Size(121, 24);
+            this.cmbseverity.TabIndex = 4;
             // 
             // contextMenuStrip1
             // 
@@ -265,7 +265,7 @@
         '\"',
         '\'',
         '\''};
-            this.txteditor.AutoScrollMinSize = new System.Drawing.Size(221, 18);
+            this.txteditor.AutoScrollMinSize = new System.Drawing.Size(171, 18);
             this.txteditor.BackBrush = null;
             this.txteditor.CharHeight = 18;
             this.txteditor.CharWidth = 10;
@@ -279,7 +279,7 @@
             this.txteditor.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txteditor.ServiceColors")));
             this.txteditor.Size = new System.Drawing.Size(595, 291);
             this.txteditor.TabIndex = 5;
-            this.txteditor.Text = "fastColoredTextBox1";
+            this.txteditor.Text = "Your code here";
             this.txteditor.Zoom = 100;
             // 
             // toolStrip1
@@ -384,22 +384,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1003, 731);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnsub);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txteditor);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbseverity);
+            this.Controls.Add(this.txtsummary);
+            this.Controls.Add(this.txtclass);
+            this.Controls.Add(this.txtassgnto);
+            this.Controls.Add(this.txtline);
+            this.Controls.Add(this.txtmethod);
+            this.Controls.Add(this.txtassgnby);
+            this.Controls.Add(this.txtauthor);
+            this.Controls.Add(this.txtpname);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -434,16 +434,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtpname;
+        private System.Windows.Forms.TextBox txtassgnto;
+        private System.Windows.Forms.TextBox txtclass;
+        private System.Windows.Forms.TextBox txtsummary;
+        private System.Windows.Forms.TextBox txtauthor;
+        private System.Windows.Forms.TextBox txtassgnby;
+        private System.Windows.Forms.TextBox txtmethod;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtline;
+        private System.Windows.Forms.ComboBox cmbseverity;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private FastColoredTextBoxNS.FastColoredTextBox txteditor;
         private System.Windows.Forms.ToolStrip toolStrip1;

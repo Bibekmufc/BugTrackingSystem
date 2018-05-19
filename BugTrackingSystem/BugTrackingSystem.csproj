@@ -49,6 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Panel.Designer.cs">
+      <DependentUpon>Admin Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assign.Designer.cs">
+      <DependentUpon>Assign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUsers.Designer.cs">
+      <DependentUpon>EditUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +93,24 @@
     <Compile Include="Submit Report.Designer.cs">
       <DependentUpon>Submit Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="View Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Users.Designer.cs">
+      <DependentUpon>View Users.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin Panel.resx">
+      <DependentUpon>Admin Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assign.resx">
+      <DependentUpon>Assign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUsers.resx">
+      <DependentUpon>EditUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Submit Report.resx">
       <DependentUpon>Submit Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Users.resx">
+      <DependentUpon>View Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,6 +154,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bug1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document-write-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document-write-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document-write-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

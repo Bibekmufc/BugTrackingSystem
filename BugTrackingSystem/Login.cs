@@ -13,11 +13,17 @@ namespace BugTrackingSystem
 {
     public partial class Login : Form
     {
-        MySqlConnection con = new MySqlConnection();
+        string user;
+        string pass;
+        string userRole;
+        MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrack; password=; SslMode=none;");
+        MySqlDataAdapter ada;
+        DataTable dt;
         public Login()
         {
             InitializeComponent();
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -52,6 +58,64 @@ namespace BugTrackingSystem
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register r = new Register();
+            r.Show();
+            
+        }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            //validation
+            if (txtuname.Text == "")
+            {
+                lbluname.Text = "Please enter username ";
+            }
+            else if (txtpass.Text == "")
+            {
+                lblpass.Text = " Please enter password ";
+            }
+
+            login();
+        }
+
+
+        public void login()
+        {
+            user = txtuname.Text;
+            pass = txtpass.Text;
+            dt = new DataTable();
+            try
+            {
+                string query = "select * from users where " +
+                    " username ='" + user + "' and password='" + pass + "'";
+                ada = new MySqlDataAdapter(query, con);
+                ada.Fill(dt);
+
+                IDataReader uRes = dt.CreateDataReader();
+
+                if (dt.Rows.Count == 1)
+                {
+                    MessageBox.Show("Logged In successfully!", "YAY", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("incorrect username and password", "alter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SubmitReport s = new SubmitReport();
+            s.Show();
         }
     }
 }

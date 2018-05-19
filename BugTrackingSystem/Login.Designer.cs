@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,8 +39,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbluname = new System.Windows.Forms.Label();
+            this.lblpass = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +56,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(263, 467);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BugTrackingSystem.Properties.Resources.bug1;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 91);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label5
             // 
@@ -75,6 +88,7 @@
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "here";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // label4
             // 
@@ -116,6 +130,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // label2
             // 
@@ -144,16 +159,6 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "     Password";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BugTrackingSystem.Properties.Resources.bug1;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 91);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -164,12 +169,43 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Track My Bugs";
             // 
+            // lbluname
+            // 
+            this.lbluname.AutoSize = true;
+            this.lbluname.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbluname.Location = new System.Drawing.Point(556, 169);
+            this.lbluname.Name = "lbluname";
+            this.lbluname.Size = new System.Drawing.Size(0, 17);
+            this.lbluname.TabIndex = 16;
+            // 
+            // lblpass
+            // 
+            this.lblpass.AutoSize = true;
+            this.lblpass.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblpass.Location = new System.Drawing.Point(556, 233);
+            this.lblpass.Name = "lblpass";
+            this.lblpass.Size = new System.Drawing.Size(0, 17);
+            this.lblpass.TabIndex = 16;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(753, 305);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Report";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(883, 467);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.lblpass);
+            this.Controls.Add(this.lbluname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.linkLabel1);
@@ -180,6 +216,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Login";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
@@ -202,6 +239,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbluname;
+        private System.Windows.Forms.Label lblpass;
+        private System.Windows.Forms.Button button2;
     }
 }
 

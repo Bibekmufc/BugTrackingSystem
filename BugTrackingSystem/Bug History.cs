@@ -13,7 +13,8 @@ namespace BugTrackingSystem
 {
     public partial class Bug_History : Form
     {
-        MySqlConnection conn = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrack; password=; SslMode=none;");
+        //connecting to mysql database
+        MySqlConnection conn = new MySqlConnection("datasource = localhost; port = 3306; username = root; database = bugtrack; password=; SslMode=none;");
         MySqlDataAdapter ad;
         DataSet dt;
         public Bug_History()
@@ -21,16 +22,11 @@ namespace BugTrackingSystem
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Bug_History_Load(object sender, EventArgs e)
         {
             try
             {
-                if (!String.IsNullOrEmpty(Dashboard.searchItem))
+                if (!String.IsNullOrEmpty(Dashboard.searchItem))  //search keywords to search for in the dashboard
                 {
                     string query = "select * from bugs where summary like '%" + Dashboard.searchItem + "%' or project_name like '%" + Dashboard.searchItem + "%' ";
                     ad = new MySqlDataAdapter(query, conn);
@@ -42,7 +38,7 @@ namespace BugTrackingSystem
                     conn.Close();
                 }
                 else
-                {
+                {   //table to view the bug history
                     string query = "select * from bugs";
                     ad = new MySqlDataAdapter(query, conn);
                     conn.Open();
@@ -54,7 +50,7 @@ namespace BugTrackingSystem
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }

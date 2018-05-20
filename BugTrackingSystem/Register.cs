@@ -14,7 +14,7 @@ namespace BugTrackingSystem
 {
     public partial class Register : Form
     {
-
+        //connecting to mysql database
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrack; password=; SslMode=none;");
         MySqlCommand myCommand;
         public Register()
@@ -23,7 +23,7 @@ namespace BugTrackingSystem
         }
         private void btnsubmit_Click(object sender, EventArgs e)
         {
-            //validation
+            //validation to check if any field is empty 
             if (txtname.Text == "")
             {
                 lblname.Text = "Please enter your name ";
@@ -43,7 +43,6 @@ namespace BugTrackingSystem
             else{
                 string name = txtname.Text;
                 string email = txtemail.Text;
-               // string role = cmbrole.Text;
                 string uname = txtuname.Text;
                 string pass = txtpass.Text;
                 try
@@ -54,13 +53,13 @@ namespace BugTrackingSystem
                     con.Open();
                     if (myCommand.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Registered Successfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("User registered successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Error connecting to database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 myCommand.Connection.Close();

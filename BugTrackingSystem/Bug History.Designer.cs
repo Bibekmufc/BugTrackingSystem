@@ -52,7 +52,6 @@
             this.label1.Size = new System.Drawing.Size(226, 49);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bug History";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Bug_History
             // 

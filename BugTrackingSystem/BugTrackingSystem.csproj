@@ -67,6 +67,12 @@
     <Compile Include="Bug History.Designer.cs">
       <DependentUpon>Bug History.cs</DependentUpon>
     </Compile>
+    <Compile Include="Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code.Designer.cs">
+      <DependentUpon>Code.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bug History.resx">
       <DependentUpon>Bug History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Code.resx">
+      <DependentUpon>Code.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

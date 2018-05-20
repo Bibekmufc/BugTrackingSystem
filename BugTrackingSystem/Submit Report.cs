@@ -14,6 +14,7 @@ namespace BugTrackingSystem
 {
     public partial class SubmitReport : Form
     {
+        //connecting c# to mysql database
         MySqlConnection conn = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrack; password=; SslMode=none;");
         MySqlDataAdapter ad;
         DataTable d;
@@ -25,7 +26,7 @@ namespace BugTrackingSystem
             InitializeComponent();
             getUsers();
         }
-
+        //getting various text editor format for different languages selected
         private void SubmitReport_Load(object sender, EventArgs e)
         {
             txteditor.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -61,7 +62,8 @@ namespace BugTrackingSystem
             dt = new DataSet();
             try
             {
-                string query = "select u.id, u.email from users u, roles r, user_roles ur " +
+                    //sql query to select user type developer
+                    string query = "select u.id, u.email from users u, roles r, user_roles ur " +
                     "WHERE u.id = ur.user_id and r.id= ur.role_id and r.u_type = 'developer'";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 ad = new MySqlDataAdapter(query, conn);
@@ -80,7 +82,7 @@ namespace BugTrackingSystem
 
         private void btnsub_Click(object sender, EventArgs e)
         {
-            //validation
+            //validation to check if the fields are empty
             if (txtpname.Text == "")
             {
                 lblpname.Text = "Please enter a project name ";
@@ -111,7 +113,7 @@ namespace BugTrackingSystem
             }
             else if(txtlink.Text == "")
             {
-                lbllink.Text = "Please enter you link to the code";
+                lbllink.Text = "Please enter your link to the code";
             }
             else if (cmbseverity.Text == "")
             {
@@ -123,6 +125,7 @@ namespace BugTrackingSystem
             }
             else
             {
+                //declaring variables
                 string pName = txtpname.Text;
                 string cName = txtclass.Text;
                 string mName = txtmethod.Text;
@@ -136,6 +139,7 @@ namespace BugTrackingSystem
 
                 try
                 {
+                    //sql query to insert data into bugs table as part of bug report submission
                     string myInsertQuery = "INSERT INTO bugs (project_name, author, assigned_to, summary, link, syntax, language," +
                         "class, method, line_no, presented_by, status, severity, date_added) " +
                         "Values('" + pName + "','" + author + "','" + assignTo + "', '" + summary + "','" + link + "','" + code + "', " +
@@ -145,7 +149,7 @@ namespace BugTrackingSystem
                     conn.Open();
                     if (myCommand.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Inserted sucessfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Bug report submitted successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)

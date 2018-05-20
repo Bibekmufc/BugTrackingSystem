@@ -13,7 +13,8 @@ namespace BugTrackingSystem
 {
     public partial class Assign : Form
     {
-        MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrack; password=; SslMode=none;");
+        //connection to mysql database
+        MySqlConnection con = new MySqlConnection("datasource = localhost; port = 3306; username = root; database=bugtrack; password=; SslMode=none;");
         MySqlDataAdapter ad;
         DataSet dt;
         DataTable d;
@@ -28,14 +29,14 @@ namespace BugTrackingSystem
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            //validation
+            //validation to check if the field is empty
             if (cmbuser.Text == "")
             {
-                lblu.Text = " •Please Select Any  User";
+                lblu.Text = "Please Select an  User";
             }
             else if (cmbrole.Text == "")
             {
-                lblr.Text = "•Please Select Any Role";
+                lblr.Text = "Please Select a Role";
             }
             else
             {
@@ -45,7 +46,7 @@ namespace BugTrackingSystem
             }
         }
 
-        //fecth data from database and load it into a combo box
+        //fetching data from database and loading it into the combo box
         public void selectRole()
         {
             dt = new DataSet();
@@ -66,7 +67,7 @@ namespace BugTrackingSystem
             {
             }
         }
-        //fecth data from database and load it into a combo box
+        //fetching data from database and loading it into the combo box
         public void selectUsers()
         {
             dt = new DataSet();
@@ -87,7 +88,7 @@ namespace BugTrackingSystem
             {
             }
         }
-        //add user's their role
+        //assigning role to users
         public void addUserRole()
         {
             try
@@ -97,17 +98,17 @@ namespace BugTrackingSystem
                 con.Open();
                 if (myCommand.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Added Sucessfully!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("User Added Sucessfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error connecting to database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             myCommand.Connection.Close();
         }
-        //get the specific user
+        //getting users to be displayed
         public void getUser()
         {
             d = new DataTable();
@@ -127,11 +128,11 @@ namespace BugTrackingSystem
             }
             catch (Exception)
             {
-                //MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error connecting to database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        //get the specific role for user
+        //get specific role for users
         public void getRole()
         {
 
@@ -154,7 +155,7 @@ namespace BugTrackingSystem
             }
             catch (Exception)
             {
-                //MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error connecting to database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

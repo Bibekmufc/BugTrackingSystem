@@ -13,6 +13,7 @@ namespace BugTrackingSystem
 {
     public partial class ViewUsers : Form
     {
+        //connecting to mysql database
         MySqlConnection conn = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrack; password=; SslMode=none;");
         MySqlDataAdapter ad;
         DataSet dt;
@@ -21,10 +22,12 @@ namespace BugTrackingSystem
             InitializeComponent();
         }
 
+        //action when view users button is clicked
         private void btnview_Click(object sender, EventArgs e)
         {
             try
             {
+                //sql query to select data from database
                 string query = "select * from users u, roles r, user_roles ur where u.id = ur.user_id and r.id = ur.role_id";
                 ad= new MySqlDataAdapter(query, conn);
                 conn.Open();
@@ -44,17 +47,19 @@ namespace BugTrackingSystem
             }
         }
 
+        //action when delete button is clicked
         private void btndelete_Click_1(object sender, EventArgs e)
         {
             try
             {
                 string selected_uid = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
+                //sql query to delete users
                 string query = "DELETE from users where id=" + int.Parse(selected_uid);
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show("Sucessfully deleted!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("User deleted!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -64,7 +69,7 @@ namespace BugTrackingSystem
             }
             catch (Exception x)
             {
-                MessageBox.Show("Error in db connection" + x.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error connecting to database" + x.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

@@ -12,6 +12,7 @@ namespace BugTrackingSystem
 {
     public partial class Dashboard : Form
     {
+        //initializing variables
         public static string searchItem;
         public Dashboard(string user, string userRole)
         {
@@ -24,11 +25,14 @@ namespace BugTrackingSystem
 
         }
 
+
+        //logout button
         private void btnlogout_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //report a bug button
         SubmitReport s;
         private void btnreport_Click(object sender, EventArgs e)
         {
@@ -52,6 +56,8 @@ namespace BugTrackingSystem
            // throw new NotImplementedException();
         }
 
+
+        //bug histroy button
         Bug_History bh;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -74,7 +80,7 @@ namespace BugTrackingSystem
             //throw new NotImplementedException();
         }
 
-
+        //search button clicked
         private void btnsearch_Click(object sender, EventArgs e)
         {
             if (bh == null)
@@ -90,6 +96,8 @@ namespace BugTrackingSystem
             }
         }
 
+
+        //search query
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             searchItem = txtsearch.Text;
@@ -113,15 +121,23 @@ namespace BugTrackingSystem
           //  throw new NotImplementedException();
         }
 
+        //view bugs button
         View_Bugs vb;
         private void btnview_Click(object sender, EventArgs e)
         {
-            if(vb == null)
+            if (Login.userRole == "tester")
             {
-                View_Bugs vb = new View_Bugs();
-                vb.FormClosed += Vb_FormClosed;
-                vb.MdiParent = this;
-                vb.Show();
+                btnview.Enabled = false;
+            }
+            else
+            {
+                if (vb == null)
+                {
+                    View_Bugs vb = new View_Bugs();
+                    vb.FormClosed += Vb_FormClosed;
+                    vb.MdiParent = this;
+                    vb.Show();
+                }
             }
         }
 

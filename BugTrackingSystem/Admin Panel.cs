@@ -12,11 +12,15 @@ namespace BugTrackingSystem
 {
     public partial class Admin_Panel : Form
     {
-        public Admin_Panel()
+        //Admin panel initiliazing with constructors
+        public Admin_Panel(int uid, string user, string uRole)
         {
             InitializeComponent();
+            lblwelcome.Text = "Welcome " + user + " | " + uRole;
+
         }
 
+        //View users form when "View users" button is clicked
         ViewUsers v;
         private void viewUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -40,6 +44,7 @@ namespace BugTrackingSystem
             //throw new NotImplementedException();
         }
 
+        //Register form when "Add User" button is clicked
         Register r;
         private void addUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -62,6 +67,8 @@ namespace BugTrackingSystem
             //throw new NotImplementedException();
         }
 
+
+        //Assign Role form when "Assign Role" button is clicked
         Assign a;
         private void assignRolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -84,6 +91,7 @@ namespace BugTrackingSystem
             //throw new NotImplementedException();
         }
 
+        //Edit user form when "Edit User" button is clicked
         EditUsers eu;
         private void editUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -105,6 +113,12 @@ namespace BugTrackingSystem
         {
             eu = null;
             //throw new NotImplementedException();
+        }
+
+        //application and session end when  "logout" button is pressed
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -30,9 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbuser = new System.Windows.Forms.ComboBox();
+            this.cmbrole = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnadd = new System.Windows.Forms.Button();
+            this.lblu = new System.Windows.Forms.Label();
+            this.lblr = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -55,21 +58,23 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Role";
             // 
-            // comboBox1
+            // cmbuser
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(344, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
+            this.cmbuser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbuser.FormattingEnabled = true;
+            this.cmbuser.Location = new System.Drawing.Point(344, 118);
+            this.cmbuser.Name = "cmbuser";
+            this.cmbuser.Size = new System.Drawing.Size(121, 24);
+            this.cmbuser.TabIndex = 1;
             // 
-            // comboBox2
+            // cmbrole
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(344, 167);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 1;
+            this.cmbrole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbrole.FormattingEnabled = true;
+            this.cmbrole.Location = new System.Drawing.Point(344, 167);
+            this.cmbrole.Name = "cmbrole";
+            this.cmbrole.Size = new System.Drawing.Size(121, 24);
+            this.cmbrole.TabIndex = 1;
             // 
             // label3
             // 
@@ -81,20 +86,53 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Assign Roles";
             // 
+            // btnadd
+            // 
+            this.btnadd.Location = new System.Drawing.Point(230, 229);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.TabIndex = 3;
+            this.btnadd.Text = "Add Role";
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
+            // 
+            // lblu
+            // 
+            this.lblu.AutoSize = true;
+            this.lblu.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblu.Location = new System.Drawing.Point(525, 125);
+            this.lblu.Name = "lblu";
+            this.lblu.Size = new System.Drawing.Size(0, 17);
+            this.lblu.TabIndex = 4;
+            // 
+            // lblr
+            // 
+            this.lblr.AutoSize = true;
+            this.lblr.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblr.Location = new System.Drawing.Point(525, 174);
+            this.lblr.Name = "lblr";
+            this.lblr.Size = new System.Drawing.Size(0, 17);
+            this.lblr.TabIndex = 4;
+            // 
             // Assign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(769, 489);
+            this.Controls.Add(this.lblr);
+            this.Controls.Add(this.lblu);
+            this.Controls.Add(this.btnadd);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbrole);
+            this.Controls.Add(this.cmbuser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Assign";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Assign Roles";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Assign_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,8 +142,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbuser;
+        private System.Windows.Forms.ComboBox cmbrole;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnadd;
+        private System.Windows.Forms.Label lblu;
+        private System.Windows.Forms.Label lblr;
     }
 }

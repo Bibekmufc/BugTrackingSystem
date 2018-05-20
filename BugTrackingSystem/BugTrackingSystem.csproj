@@ -61,6 +61,12 @@
     <Compile Include="Assign.Designer.cs">
       <DependentUpon>Assign.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bug History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bug History.Designer.cs">
+      <DependentUpon>Bug History.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,12 @@
     <Compile Include="Submit Report.Designer.cs">
       <DependentUpon>Submit Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="View Bugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Bugs.Designer.cs">
+      <DependentUpon>View Bugs.cs</DependentUpon>
+    </Compile>
     <Compile Include="View Users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +123,9 @@
     <EmbeddedResource Include="Assign.resx">
       <DependentUpon>Assign.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bug History.resx">
+      <DependentUpon>Bug History.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Submit Report.resx">
       <DependentUpon>Submit Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Bugs.resx">
+      <DependentUpon>View Bugs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View Users.resx">
       <DependentUpon>View Users.cs</DependentUpon>
@@ -169,6 +196,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-view-history-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security-Password-2-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

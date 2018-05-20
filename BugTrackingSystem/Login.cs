@@ -13,10 +13,11 @@ namespace BugTrackingSystem
 {
     public partial class Login : Form
     {
-        string user;
+        public static string email;
+        public static string user, userPassword;
         string pass;
         string userRole;
-        Admin_Panel a;
+        public static int uid;
         MySqlConnection con = new MySqlConnection("datasource=localhost; port=3306; username=root; database=bugtrack; password=; SslMode=none;");
         MySqlDataAdapter ada;
         DataTable dt;
@@ -91,8 +92,8 @@ namespace BugTrackingSystem
             dt = new DataTable();
             try
             {
-                string query = "select * from users where " +
-                    " username ='" + user + "' and password='" + pass + "'";
+                string query = "select u.id, u.email, u.username, u.password, r.u_type from users u, user_roles ur, roles r  where " +
+                    "u.id = ur.user_id  and r.id = ur.role_id and u.username ='" + user + "' and u.password='" + pass + "'";
                 ada = new MySqlDataAdapter(query, con);
                 ada.Fill(dt);
 
@@ -100,16 +101,36 @@ namespace BugTrackingSystem
 
                 if (dt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Logged In successfully!", "YAY", MessageBoxButtons.OK);
+                    while (uRes.Read())
+                    {
+
+                        uid = uRes.GetInt32(0);
+                        email = uRes.GetString(1);
+                        userRole = uRes.GetString(4);
+                        userPassword = uRes.GetString(3);
+
+                    }
+                    if (userRole == "admin")
+                    {
+                        Admin_Panel ap = new Admin_Panel(uid, email, userRole);
+                        ap.Show();
+                        this.Visible = false;
+                    }
+                    else
+                    {
+                        Dashboard d = new Dashboard(user, userRole);
+                        d.Show();
+                        this.Visible = false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("incorrect username and password", "alter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Incorrect username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Error in a database connection", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error in a database connection", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -121,13 +142,13 @@ namespace BugTrackingSystem
 
         private void btndash_Click(object sender, EventArgs e)
         {
-            Dashboard d = new Dashboard();
+            Dashboard d = new Dashboard(user, userRole);
                 d.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Admin_Panel a = new Admin_Panel();
+            Admin_Panel a = new Admin_Panel(uid, email, userRole);
             a.Show();
         }
     }

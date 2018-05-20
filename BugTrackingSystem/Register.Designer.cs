@@ -126,6 +126,7 @@
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(162, 22);
             this.txtpass.TabIndex = 2;
+            this.txtpass.UseSystemPasswordChar = true;
             // 
             // btnsubmit
             // 
@@ -206,6 +207,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
